@@ -1,0 +1,21 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  background: var(--color-bg-alt);
+  transition: background var(--t-base), color var(--t-base),
+    transform var(--t-fast);
+}
+
+.toggle:hover {
+  background: var(--color-pink-soft);
+  color: var(--color-pink);
+}
+
+.toggle:active {
+  transform: scale(0.94);
+}

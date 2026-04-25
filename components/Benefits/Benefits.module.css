@@ -1,0 +1,152 @@
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  filter: blur(100px);
+  opacity: 0.15;
+  top: 10%;
+  right: -150px;
+  z-index: 0;
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.aside {
+  position: sticky;
+  top: calc(var(--header-h) + var(--space-md));
+}
+
+.aside h2 {
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-sm);
+}
+
+.aside p {
+  font-size: 1.02rem;
+  max-width: 360px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  gap: var(--space-md);
+  align-items: center;
+  padding: var(--space-md) 0;
+  border-top: 1px dashed var(--color-border);
+  transition: padding-left var(--t-base);
+}
+
+.item:first-child {
+  border-top: none;
+}
+
+.item:hover {
+  padding-left: 8px;
+}
+
+.item[data-accent="pink"] {
+  --accent: var(--color-pink);
+  --accent-soft: var(--color-pink-soft);
+}
+
+.item[data-accent="cyan"] {
+  --accent: var(--color-cyan);
+  --accent-soft: var(--color-cyan-soft);
+}
+
+.item[data-accent="green"] {
+  --accent: var(--color-green);
+  --accent-soft: var(--color-green-soft);
+}
+
+.num {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-gray);
+  min-width: 24px;
+  transition: color var(--t-base);
+}
+
+.item:hover .num {
+  color: var(--accent);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: transform var(--t-base);
+}
+
+.item:hover .icon {
+  transform: rotate(-6deg) scale(1.05);
+}
+
+.copy h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.2rem;
+}
+
+.copy p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text-soft);
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .aside {
+    position: static;
+  }
+
+  .aside p {
+    max-width: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .item {
+    grid-template-columns: auto 1fr;
+    gap: var(--space-sm);
+  }
+
+  .num {
+    grid-column: 1 / -1;
+    margin-bottom: -8px;
+  }
+}

@@ -1,0 +1,115 @@
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.row {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    transparent 60%,
+    var(--accent-soft, transparent) 100%
+  );
+  opacity: 0.6;
+}
+
+.row:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.row[data-accent="pink"] {
+  --accent: var(--color-pink);
+  --accent-soft: var(--color-pink-soft);
+}
+
+.row[data-accent="cyan"] {
+  --accent: var(--color-cyan);
+  --accent-soft: var(--color-cyan-soft);
+}
+
+.row[data-accent="green"] {
+  --accent: var(--color-green);
+  --accent-soft: var(--color-green-soft);
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.head h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.short {
+  margin: 0.15rem 0 0;
+  color: var(--color-text-soft);
+  font-size: 0.95rem;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.body {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  color: var(--color-text-soft);
+}
+
+.sport {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: var(--space-xs) 0 0;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-alt);
+  font-size: 0.88rem;
+  color: var(--color-text-soft);
+  position: relative;
+  z-index: 1;
+}
+
+.sport svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 760px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,80 @@
+:root {
+  /* Paleta de marca (constante en ambos temas) */
+  --color-cyan: #0AD0EB;
+  --color-green: #7ED956;
+  --color-pink: #FF65C3;
+  --color-gray: #97989A;
+
+  /* Tipografía */
+  --font-display: var(--font-quicksand), system-ui, sans-serif;
+  --font-body: var(--font-poppins), system-ui, sans-serif;
+
+  /* Espaciado */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* Radios */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Layout */
+  --container: 1180px;
+  --header-h: 76px;
+
+  /* Transiciones */
+  --t-fast: 150ms ease;
+  --t-base: 250ms ease;
+
+  /* === Tema claro (default) === */
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #FBFBFD;
+  --color-surface: #FFFFFF;
+  --color-text: #2A2A33;
+  --color-text-soft: #5C5C66;
+  --color-border: #ECECEF;
+
+  --color-cyan-soft: #E5F9FE;
+  --color-green-soft: #EEFBE6;
+  --color-pink-soft: #FFE7F4;
+  --color-gray-soft: #F4F4F5;
+
+  --color-nav-bg: rgba(255, 255, 255, 0.7);
+  --color-nav-bg-scrolled: rgba(255, 255, 255, 0.92);
+
+  --color-footer-bg: #2A2A33;
+  --color-footer-text: #FFFFFF;
+
+  --shadow-sm: 0 2px 8px rgba(255, 101, 195, 0.08);
+  --shadow-md: 0 8px 24px rgba(10, 208, 235, 0.10);
+  --shadow-lg: 0 16px 48px rgba(255, 101, 195, 0.12);
+}
+
+[data-theme="dark"] {
+  --color-bg: #0F0F14;
+  --color-bg-alt: #14141B;
+  --color-surface: #1B1B24;
+  --color-text: #F1F1F5;
+  --color-text-soft: #A8A8B3;
+  --color-border: #2A2A33;
+
+  --color-cyan-soft: rgba(10, 208, 235, 0.12);
+  --color-green-soft: rgba(126, 217, 86, 0.12);
+  --color-pink-soft: rgba(255, 101, 195, 0.14);
+  --color-gray-soft: rgba(255, 255, 255, 0.05);
+
+  --color-nav-bg: rgba(15, 15, 20, 0.7);
+  --color-nav-bg-scrolled: rgba(15, 15, 20, 0.92);
+
+  --color-footer-bg: #07070C;
+  --color-footer-text: #F1F1F5;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
+}

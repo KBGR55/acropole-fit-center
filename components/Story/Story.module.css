@@ -1,0 +1,122 @@
+.layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: var(--space-xl);
+  align-items: flex-start;
+}
+
+.side {
+  position: sticky;
+  top: calc(var(--header-h) + var(--space-md));
+}
+
+.intro {
+  font-size: 1.02rem;
+  margin-bottom: var(--space-md);
+}
+
+.founder {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-md);
+  width: fit-content;
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+
+.founder:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-pink), var(--color-cyan));
+  color: #fff;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: 1px;
+}
+
+.name {
+  margin: 0;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.role {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-gray);
+}
+
+.founder:hover .role {
+  color: var(--color-pink);
+}
+
+.source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--color-cyan);
+  font-weight: 500;
+}
+
+.source:hover {
+  text-decoration: underline;
+}
+
+.body {
+  position: relative;
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.quoteIcon {
+  color: var(--color-pink);
+  opacity: 0.4;
+  margin-bottom: var(--space-sm);
+}
+
+.body p {
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.quote {
+  margin: var(--space-md) 0;
+  padding: var(--space-md);
+  border-left: 3px solid var(--color-pink);
+  background: var(--color-pink-soft);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--color-text);
+}
+
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .side {
+    position: static;
+  }
+}

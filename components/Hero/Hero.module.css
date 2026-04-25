@@ -1,0 +1,150 @@
+.hero {
+  position: relative;
+  padding: calc(var(--header-h) + var(--space-2xl)) 0 var(--space-2xl);
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--color-pink-soft) 0%,
+    var(--color-bg) 70%
+  );
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+.titleAccent {
+  background: linear-gradient(
+    90deg,
+    var(--color-pink),
+    var(--color-cyan)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead {
+  font-size: 1.15rem;
+  max-width: 620px;
+  margin: 0 auto var(--space-lg);
+  color: var(--color-text-soft);
+}
+
+.actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.6rem;
+  background: var(--color-pink);
+  color: #fff !important;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--t-fast), box-shadow var(--t-base);
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.95rem 1.4rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-weight: 600;
+  border: 1px solid var(--color-border);
+  transition: border-color var(--t-base), color var(--t-base);
+}
+
+.secondary:hover {
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
+}
+
+.meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  transition: color var(--t-base);
+}
+
+.meta:hover {
+  color: var(--color-pink);
+}
+
+.meta svg {
+  color: var(--color-cyan);
+  transition: transform var(--t-base);
+}
+
+.meta:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Decoraciones suaves */
+.glowOne,
+.glowTwo,
+.glowThree {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glowOne {
+  width: 360px;
+  height: 360px;
+  background: var(--color-pink);
+  top: -80px;
+  left: -120px;
+}
+
+.glowTwo {
+  width: 320px;
+  height: 320px;
+  background: var(--color-cyan);
+  top: 80px;
+  right: -100px;
+  opacity: 0.4;
+}
+
+.glowThree {
+  width: 280px;
+  height: 280px;
+  background: var(--color-green);
+  bottom: -120px;
+  left: 30%;
+  opacity: 0.3;
+}
+
+@media (max-width: 600px) {
+  .lead {
+    font-size: 1rem;
+  }
+}

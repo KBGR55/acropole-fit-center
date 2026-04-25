@@ -1,0 +1,207 @@
+.titleBlock {
+  text-align: center;
+  margin: 0 auto var(--space-md);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm) var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--color-text-soft);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot[data-type="poleSport"] {
+  background: var(--color-cyan);
+}
+
+.dot[data-type="poleFlow"] {
+  background: var(--color-pink);
+}
+
+.dot[data-type="funcional"] {
+  background: var(--color-green);
+}
+
+.dot[data-type="flex"] {
+  background: #c084fc;
+}
+
+.tableWrap {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 6px;
+  min-width: 700px;
+}
+
+.timeHead {
+  width: 80px;
+}
+
+.dayHead {
+  padding: 0.7rem 0.4rem;
+  background: var(--color-pink-soft);
+  color: var(--color-pink);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+}
+
+.timeCell {
+  background: var(--color-cyan-soft);
+  color: var(--color-cyan);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.7rem 0.5rem;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.cell {
+  padding: 0.4rem;
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-sm);
+  vertical-align: middle;
+  min-height: 56px;
+  height: 56px;
+}
+
+.class {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.class:last-child {
+  margin-bottom: 0;
+}
+
+.classTime {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.class[data-type="poleSport"] {
+  background: var(--color-cyan-soft);
+  color: var(--color-cyan);
+}
+
+.class[data-type="poleFlow"] {
+  background: var(--color-pink-soft);
+  color: var(--color-pink);
+}
+
+.class[data-type="funcional"] {
+  background: var(--color-green-soft);
+  color: var(--color-green);
+}
+
+.class[data-type="flex"] {
+  background: #f3e8ff;
+  color: #a855f7;
+}
+
+.notice {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-sm);
+  align-items: flex-start;
+  margin-top: var(--space-lg);
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--color-pink);
+}
+
+.noticeIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-pink-soft);
+  color: var(--color-pink);
+}
+
+.notice p {
+  margin: 0 0 0.5rem;
+  font-size: 0.93rem;
+}
+
+.noticePhone {
+  color: var(--color-pink);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.noticePhone:hover {
+  text-decoration: underline;
+}
+
+.noticeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: var(--color-cyan);
+  font-weight: 600;
+}
+
+.noticeLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .tableWrap {
+    padding: var(--space-sm);
+  }
+
+  .dayHead,
+  .timeCell {
+    font-size: 0.78rem;
+  }
+
+  .class {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.4rem;
+  }
+}
