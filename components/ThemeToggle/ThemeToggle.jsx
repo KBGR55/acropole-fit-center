@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
+import { useT } from "@/i18n/I18nProvider";
 import styles from "./ThemeToggle.module.css";
 
 export default function ThemeToggle() {
+  const t = useT();
   const [theme, setTheme] = useState("light");
   const [mounted, setMounted] = useState(false);
 
@@ -25,13 +27,14 @@ export default function ThemeToggle() {
   };
 
   const isDark = theme === "dark";
+  const label = isDark ? t.toggle.light : t.toggle.dark;
 
   return (
     <button
       className={styles.toggle}
       onClick={toggle}
-      aria-label={isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
-      title={isDark ? "Modo claro" : "Modo oscuro"}
+      aria-label={label}
+      title={label}
       suppressHydrationWarning
     >
       {mounted && (isDark ? <Sun size={18} /> : <Moon size={18} />)}

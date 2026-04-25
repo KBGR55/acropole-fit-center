@@ -1,9 +1,11 @@
 "use client";
 
 import { Instagram, Music2, MapPin, Mail } from "lucide-react";
+import { useT } from "@/i18n/I18nProvider";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const t = useT();
   const year = new Date().getFullYear();
 
   return (
@@ -14,26 +16,23 @@ export default function Footer() {
             <span className={styles.brandMark} aria-hidden="true" />
             <span>Acropole Fit Center</span>
           </a>
-          <p className={styles.tagline}>
-            Studio para mujeres en Loja. Pole Dance, Pole Sport, funcionales y
-            flexibilidad.
-          </p>
+          <p className={styles.tagline}>{t.footer.tagline}</p>
         </div>
 
         <div className={styles.col}>
-          <h4>Sitio</h4>
+          <h4>{t.footer.site}</h4>
           <ul>
-            <li><a href="#sobre">Sobre nosotras</a></li>
-            <li><a href="#disciplinas">Disciplinas</a></li>
-            <li><a href="#beneficios">Beneficios</a></li>
-            <li><a href="#planes">Planes</a></li>
-            <li><a href="#horario">Horario</a></li>
-            <li><a href="#historia">Historia</a></li>
+            <li><a href="#sobre">{t.footer.links.sobre}</a></li>
+            <li><a href="#disciplinas">{t.footer.links.disciplinas}</a></li>
+            <li><a href="#beneficios">{t.footer.links.beneficios}</a></li>
+            <li><a href="#planes">{t.footer.links.planes}</a></li>
+            <li><a href="#horario">{t.footer.links.horario}</a></li>
+            <li><a href="#historia">{t.footer.links.historia}</a></li>
           </ul>
         </div>
 
         <div className={styles.col}>
-          <h4>Visítanos</h4>
+          <h4>{t.footer.visit}</h4>
           <p className={styles.address}>
             <MapPin size={14} /> 10 de Agosto, Centro · Loja 110150
           </p>
@@ -66,7 +65,7 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <div className="container">
-          <p>© {year} Acropole Fit Center · Hecho con cariño en Loja.</p>
+          <p>© {year} Acropole Fit Center · {t.footer.rights}</p>
         </div>
       </div>
     </footer>

@@ -45,7 +45,6 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-sm);
-  margin-bottom: var(--space-2xl);
 }
 
 .primary {
@@ -81,28 +80,6 @@
 .secondary:hover {
   border-color: var(--color-cyan);
   color: var(--color-cyan);
-}
-
-.meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.9rem;
-  color: var(--color-gray);
-  transition: color var(--t-base);
-}
-
-.meta:hover {
-  color: var(--color-pink);
-}
-
-.meta svg {
-  color: var(--color-cyan);
-  transition: transform var(--t-base);
-}
-
-.meta:hover svg {
-  transform: translateY(-2px);
 }
 
 /* Decoraciones suaves */

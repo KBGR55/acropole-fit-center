@@ -1,0 +1,24 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.75rem;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  background: var(--color-bg-alt);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  transition: background var(--t-base), color var(--t-base),
+    transform var(--t-fast);
+}
+
+.toggle:hover {
+  background: var(--color-cyan-soft);
+  color: var(--color-cyan);
+}
+
+.toggle:active {
+  transform: scale(0.94);
+}

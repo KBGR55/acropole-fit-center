@@ -1,25 +1,20 @@
+"use client";
+
 import { Heart, Users, Flower2 } from "lucide-react";
+import { useT } from "@/i18n/I18nProvider";
 import styles from "./About.module.css";
 
 export default function About() {
+  const t = useT();
   return (
     <section className={`section ${styles.section}`} id="sobre">
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.copy}>
-            <span className="eyebrow">Sobre Acropole</span>
-            <h2>Descubre tu mejor versión, a tu ritmo.</h2>
-            <p>
-              Más que un studio, somos una comunidad. Nuestras clases están
-              diseñadas para mujeres que buscan moverse, sentirse fuertes y
-              reencontrarse consigo mismas. Aquí no se compite con nadie, se
-              celebra cada paso.
-            </p>
-            <p>
-              Trabajamos cuerpo, mente y emoción a través de Pole Dance, Pole
-              Sport, funcionales y flexibilidad, en un ambiente seguro y
-              cercano.
-            </p>
+            <span className="eyebrow">{t.about.eyebrow}</span>
+            <h2>{t.about.title}</h2>
+            <p>{t.about.p1}</p>
+            <p>{t.about.p2}</p>
           </div>
 
           <ul className={styles.points}>
@@ -28,11 +23,8 @@ export default function About() {
                 <Heart size={20} />
               </span>
               <div>
-                <h3>Amor propio</h3>
-                <p>
-                  Reconectar con tu cuerpo desde el respeto, sin juicios ni
-                  comparaciones.
-                </p>
+                <h3>{t.about.points.love.title}</h3>
+                <p>{t.about.points.love.text}</p>
               </div>
             </li>
             <li>
@@ -40,11 +32,8 @@ export default function About() {
                 <Users size={20} />
               </span>
               <div>
-                <h3>Comunidad de mujeres</h3>
-                <p>
-                  Un círculo donde apoyarse, aprender y crecer juntas con
-                  sororidad real.
-                </p>
+                <h3>{t.about.points.community.title}</h3>
+                <p>{t.about.points.community.text}</p>
               </div>
             </li>
             <li>
@@ -52,11 +41,8 @@ export default function About() {
                 <Flower2 size={20} />
               </span>
               <div>
-                <h3>Bienestar integral</h3>
-                <p>
-                  Movimiento que cuida la postura, alivia el estrés y eleva la
-                  energía.
-                </p>
+                <h3>{t.about.points.wellness.title}</h3>
+                <p>{t.about.points.wellness.text}</p>
               </div>
             </li>
           </ul>

@@ -1,3 +1,5 @@
+"use client";
+
 import {
   MapPin,
   Phone,
@@ -6,23 +8,22 @@ import {
   ArrowUpRight,
   Mail,
 } from "lucide-react";
+import { useT } from "@/i18n/I18nProvider";
 import styles from "./Contact.module.css";
 
 const RESERVA_URL =
   "https://reservaclase.com/acropolefitcenter/index.php?menu=clase&id_clase=7059&dia=0";
 
 export default function Contact() {
+  const t = useT();
   return (
     <section className={`section ${styles.section}`} id="contacto">
       <div className="container">
         <div className={styles.wrap}>
           <div className={styles.intro}>
-            <span className="eyebrow">Visítanos</span>
-            <h2>Tu primera clase te está esperando.</h2>
-            <p>
-              Acércate o escríbenos. Si ya eres alumna, reserva directo en la
-              app. Si vas a empezar, cuéntanos por Instagram y te orientamos.
-            </p>
+            <span className="eyebrow">{t.contact.eyebrow}</span>
+            <h2>{t.contact.title}</h2>
+            <p>{t.contact.intro}</p>
           </div>
 
           <div className={styles.grid}>
@@ -36,8 +37,8 @@ export default function Contact() {
                 <CalendarCheck size={22} />
               </span>
               <div>
-                <h3>Reservar clase</h3>
-                <p>App para alumnas activas</p>
+                <h3>{t.contact.reserve.title}</h3>
+                <p>{t.contact.reserve.subtitle}</p>
               </div>
               <ArrowUpRight className={styles.arrow} size={18} />
             </a>
@@ -50,16 +51,13 @@ export default function Contact() {
                 <MapPin size={22} />
               </span>
               <div>
-                <h3>Dónde estamos</h3>
-                <p>10 de Agosto, Centro</p>
-                <p>Loja 110150, Ecuador</p>
+                <h3>{t.contact.location.title}</h3>
+                <p>{t.contact.location.line1}</p>
+                <p>{t.contact.location.line2}</p>
               </div>
             </div>
 
-            <a
-              className={styles.tile}
-              href="tel:+593983835505"
-            >
+            <a className={styles.tile} href="tel:+593983835505">
               <span
                 className={`${styles.tileIcon} ${styles.iconGreen}`}
                 aria-hidden="true"
@@ -67,8 +65,8 @@ export default function Contact() {
                 <Phone size={22} />
               </span>
               <div>
-                <h3>Llámanos</h3>
-                <p>+593 983 835 505</p>
+                <h3>{t.contact.phone.title}</h3>
+                <p>{t.contact.phone.subtitle}</p>
               </div>
               <ArrowUpRight className={styles.arrow} size={18} />
             </a>
@@ -86,8 +84,8 @@ export default function Contact() {
                 <Instagram size={22} />
               </span>
               <div>
-                <h3>Instagram</h3>
-                <p>@acropolefitcenter</p>
+                <h3>{t.contact.instagram.title}</h3>
+                <p>{t.contact.instagram.subtitle}</p>
               </div>
               <ArrowUpRight className={styles.arrow} size={18} />
             </a>
@@ -103,8 +101,8 @@ export default function Contact() {
                 <Mail size={22} />
               </span>
               <div>
-                <h3>Escríbenos</h3>
-                <p>acropolefitcenterloja@gmail.com</p>
+                <h3>{t.contact.email.title}</h3>
+                <p>{t.contact.email.subtitle}</p>
               </div>
               <ArrowUpRight className={styles.arrow} size={18} />
             </a>

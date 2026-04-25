@@ -1,91 +1,69 @@
+"use client";
+
 import { Info, ArrowUpRight } from "lucide-react";
+import { useT } from "@/i18n/I18nProvider";
 import styles from "./Schedule.module.css";
 
 const RESERVA_URL =
   "https://reservaclase.com/acropolefitcenter/index.php?menu=clase&id_clase=7059&dia=0";
 
-const days = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
-
 const slots = [
   {
     time: "09:45",
     cells: {
-      Lun: [{ name: "Pole Sport", type: "poleSport" }],
-      Mar: [{ name: "Funcional", type: "funcional" }],
-      "Mié": [{ name: "Pole Sport", type: "poleSport" }],
-      Jue: [{ name: "Funcional", type: "funcional" }],
-      Vie: [{ name: "Funcional", type: "funcional" }],
-      "Sáb": [{ name: "Pole Sport", type: "poleSport", at: "10:00" }],
+      0: [{ key: "poleSport" }],
+      1: [{ key: "funcional" }],
+      2: [{ key: "poleSport" }],
+      3: [{ key: "funcional" }],
+      4: [{ key: "funcional" }],
+      5: [{ key: "poleSport", at: "10:00" }],
     },
   },
   {
     time: "10:30",
     cells: {
-      Vie: [{ name: "Pole Sport", type: "poleSport" }],
-      "Sáb": [{ name: "Flexibilidad", type: "flex", at: "11:00" }],
+      4: [{ key: "poleSport" }],
+      5: [{ key: "flex", at: "11:00" }],
     },
   },
   {
     time: "18:15",
     cells: {
-      Lun: [{ name: "Pole Sport", type: "poleSport" }],
-      Mar: [{ name: "Pole Sport", type: "poleSport" }],
-      "Mié": [
-        { name: "Pole Flow", type: "poleFlow" },
-        { name: "Funcional", type: "funcional" },
-      ],
-      Jue: [{ name: "Pole Sport", type: "poleSport" }],
-      Vie: [
-        { name: "Pole Flow", type: "poleFlow" },
-        { name: "Funcional", type: "funcional" },
-      ],
+      0: [{ key: "poleSport" }],
+      1: [{ key: "poleSport" }],
+      2: [{ key: "poleFlow" }, { key: "funcional" }],
+      3: [{ key: "poleSport" }],
+      4: [{ key: "poleFlow" }, { key: "funcional" }],
     },
   },
   {
     time: "19:15",
     cells: {
-      Lun: [{ name: "Pole Sport", type: "poleSport" }],
-      Mar: [
-        { name: "Pole Sport", type: "poleSport" },
-        { name: "Flexibilidad", type: "flex" },
-      ],
-      Jue: [
-        { name: "Pole Sport", type: "poleSport" },
-        { name: "Flexibilidad", type: "flex" },
-      ],
+      0: [{ key: "poleSport" }],
+      1: [{ key: "poleSport" }, { key: "flex" }],
+      3: [{ key: "poleSport" }, { key: "flex" }],
     },
   },
 ];
 
-const legend = [
-  { label: "Pole Sport", type: "poleSport" },
-  { label: "Pole Flow", type: "poleFlow" },
-  { label: "Funcional", type: "funcional" },
-  { label: "Flexibilidad", type: "flex" },
-];
+const legendOrder = ["poleSport", "poleFlow", "funcional", "flex"];
 
 export default function Schedule() {
+  const t = useT();
   return (
     <section className={`section section--alt ${styles.section}`} id="horario">
       <div className="container">
         <div className={`section-title ${styles.titleBlock}`}>
-          <span className="eyebrow">Horario</span>
-          <h2>Encuentra tu hora ideal.</h2>
-          <p>
-            Clases de mañana y de tarde-noche, de lunes a sábado. Elegí el
-            horario que mejor se acomode a tu día.
-          </p>
+          <span className="eyebrow">{t.schedule.eyebrow}</span>
+          <h2>{t.schedule.title}</h2>
+          <p>{t.schedule.intro}</p>
         </div>
 
         <div className={styles.legend}>
-          {legend.map((l) => (
-            <span key={l.type} className={styles.legendItem}>
-              <span
-                className={styles.dot}
-                data-type={l.type}
-                aria-hidden="true"
-              />
-              {l.label}
+          {legendOrder.map((k) => (
+            <span key={k} className={styles.legendItem}>
+              <span className={styles.dot} data-type={k} aria-hidden="true" />
+              {t.schedule.legend[k]}
             </span>
           ))}
         </div>
@@ -95,7 +73,7 @@ export default function Schedule() {
             <thead>
               <tr>
                 <th className={styles.timeHead} aria-label="Hora" />
-                {days.map((d) => (
+                {t.schedule.days.map((d) => (
                   <th key={d} className={styles.dayHead}>
                     {d}
                   </th>
@@ -108,8 +86,8 @@ export default function Schedule() {
                   <th className={styles.timeCell} scope="row">
                     {slot.time}
                   </th>
-                  {days.map((d) => {
-                    const items = slot.cells[d];
+                  {t.schedule.days.map((d, dayIndex) => {
+                    const items = slot.cells[dayIndex];
                     return (
                       <td key={d} className={styles.cell}>
                         {items
@@ -117,14 +95,14 @@ export default function Schedule() {
                               <span
                                 key={i}
                                 className={styles.class}
-                                data-type={c.type}
+                                data-type={c.key}
                               >
                                 {c.at && (
                                   <span className={styles.classTime}>
                                     {c.at}
                                   </span>
                                 )}
-                                {c.name}
+                                {t.schedule.legend[c.key]}
                               </span>
                             ))
                           : null}
@@ -143,10 +121,7 @@ export default function Schedule() {
           </span>
           <div>
             <p>
-              Los horarios pueden variar según la disponibilidad de las
-              instructoras. Antes de venir, revisa la disponibilidad real en
-              nuestra app de reservas. En caso de no tener acceso a la web,
-              escribe al{" "}
+              {t.schedule.notice.before}{" "}
               <a
                 className={styles.noticePhone}
                 href="https://wa.me/593983835505"
@@ -155,7 +130,7 @@ export default function Schedule() {
               >
                 +593 98 383 5505
               </a>
-              .
+              {t.schedule.notice.after}
             </p>
             <a
               className={styles.noticeLink}
@@ -163,7 +138,7 @@ export default function Schedule() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Revisar disponibilidad
+              {t.schedule.notice.cta}
               <ArrowUpRight size={14} />
             </a>
           </div>

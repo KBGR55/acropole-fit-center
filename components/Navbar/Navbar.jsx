@@ -3,18 +3,15 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
+import LanguageToggle from "@/components/LanguageToggle/LanguageToggle";
+import { useT } from "@/i18n/I18nProvider";
 import styles from "./Navbar.module.css";
-
-const links = [
-  { href: "#disciplinas", label: "Disciplinas" },
-  { href: "#planes", label: "Planes" },
-  { href: "#horario", label: "Horario" },
-];
 
 const RESERVA_URL =
   "https://reservaclase.com/acropolefitcenter/index.php?menu=clase&id_clase=7059&dia=0";
 
 export default function Navbar() {
+  const t = useT();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -24,6 +21,12 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const links = [
+    { href: "#disciplinas", label: t.nav.disciplinas },
+    { href: "#planes", label: t.nav.planes },
+    { href: "#horario", label: t.nav.horario },
+  ];
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
@@ -45,6 +48,7 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+          <LanguageToggle />
           <ThemeToggle />
           <a
             className={styles.cta}
@@ -52,13 +56,13 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Reservar clase
+            {t.nav.reservar}
           </a>
         </nav>
 
         <button
           className={styles.toggle}
-          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-label={open ? t.nav.cerrarMenu : t.nav.abrirMenu}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >

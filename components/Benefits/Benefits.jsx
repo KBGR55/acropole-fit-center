@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Activity,
   Zap,
@@ -6,66 +8,33 @@ import {
   Heart,
   ShieldCheck,
 } from "lucide-react";
+import { useT } from "@/i18n/I18nProvider";
 import styles from "./Benefits.module.css";
 
-const benefits = [
-  {
-    icon: Activity,
-    title: "Más movilidad",
-    text: "Ganas rango articular, te mueves con soltura y previenes lesiones en tu día a día.",
-  },
-  {
-    icon: Zap,
-    title: "Mejor rendimiento",
-    text: "Más agilidad, potencia y coordinación, dentro y fuera del studio.",
-  },
-  {
-    icon: Brain,
-    title: "Mente en calma",
-    text: "Bajan el estrés y la ansiedad. Te conectas con tu respiración y tu presente.",
-  },
-  {
-    icon: Sparkles,
-    title: "Postura y estética",
-    text: "Alineación más alta, hombros abiertos. Te sentís más segura en tu propia piel.",
-  },
-  {
-    icon: Heart,
-    title: "Salud cardiovascular",
-    text: "Corazón más fuerte, mejor circulación y mayor energía durante el día.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Confianza real",
-    text: "Cada figura nueva es un recordatorio de todo lo que tu cuerpo es capaz.",
-  },
-];
-
+const icons = [Activity, Zap, Brain, Sparkles, Heart, ShieldCheck];
 const accents = ["pink", "cyan", "green"];
 
 export default function Benefits() {
+  const t = useT();
   return (
     <section className={`section ${styles.section}`} id="beneficios">
       <div className={`container ${styles.layout}`}>
         <aside className={styles.aside}>
-          <span className="eyebrow">Beneficios</span>
+          <span className="eyebrow">{t.benefits.eyebrow}</span>
           <h2>
-            Cuerpo fuerte,
+            {t.benefits.titleA}
             <br />
-            mente liviana.
+            {t.benefits.titleB}
           </h2>
-          <p>
-            La ciencia del ejercicio respalda lo que aquí ya sabemos: moverte
-            con regularidad cambia cómo te sientes — por dentro y por fuera.
-          </p>
+          <p>{t.benefits.intro}</p>
         </aside>
 
         <ol className={styles.list}>
-          {benefits.map((b, i) => {
-            const Icon = b.icon;
+          {t.benefits.items.map((b, i) => {
+            const Icon = icons[i];
             const accent = accents[i % accents.length];
             return (
-              <li key={b.title} className={styles.item} data-accent={accent}>
+              <li key={i} className={styles.item} data-accent={accent}>
                 <span className={styles.num}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
