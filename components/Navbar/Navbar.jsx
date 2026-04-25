@@ -48,8 +48,10 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <LanguageToggle />
-          <ThemeToggle />
+          <div className={styles.toggles}>
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
           <a
             className={styles.cta}
             href={RESERVA_URL}

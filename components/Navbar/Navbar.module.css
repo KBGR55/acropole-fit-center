@@ -66,6 +66,12 @@
   gap: var(--space-md);
 }
 
+.toggles {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
 .list {
   display: flex;
   align-items: center;
@@ -142,15 +148,17 @@
     left: 0;
     right: 0;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
+    justify-content: center;
     background: var(--color-surface);
     border-bottom: 1px solid var(--color-border);
-    padding: var(--space-md);
-    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-md) var(--space-xl);
+    gap: var(--space-md);
     transform: translateY(-12px);
     opacity: 0;
     pointer-events: none;
     transition: opacity var(--t-base), transform var(--t-base);
+    box-shadow: var(--shadow-md);
   }
 
   .navOpen {
@@ -161,11 +169,31 @@
 
   .list {
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-sm);
+    align-items: center;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .list a {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .list a::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav > :global(button),
+  .nav > .cta {
+    align-self: center;
   }
 
   .cta {
-    align-self: flex-start;
+    width: auto;
+    min-width: 200px;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+    margin-top: var(--space-xs);
   }
 }
