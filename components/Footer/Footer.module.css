@@ -33,9 +33,35 @@
 }
 
 .col ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: var(--space-md);
+  row-gap: 0.55rem;
+}
+
+.col ul a {
+  display: inline-block;
+  position: relative;
+  transition: color var(--t-fast), transform var(--t-fast);
+}
+
+.col ul a::before {
+  content: "→";
+  position: absolute;
+  left: -14px;
+  opacity: 0;
+  color: var(--color-pink);
+  transition: opacity var(--t-fast), transform var(--t-fast);
+}
+
+.col ul a:hover {
+  color: var(--color-pink);
+  transform: translateX(10px);
+}
+
+.col ul a:hover::before {
+  opacity: 1;
+  transform: translateX(-2px);
 }
 
 .brand {

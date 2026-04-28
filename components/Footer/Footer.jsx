@@ -40,7 +40,14 @@ export default function Footer() {
         <div className={styles.col}>
           <h4>{t.footer.visit}</h4>
           <p className={styles.address}>
-            <MapPin size={14} /> 10 de Agosto, Centro · Loja 110150
+            <MapPin size={14} />
+            <a
+              href="https://maps.app.goo.gl/5VAcgbMU332iGj7u5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              10 de Agosto, Centro · Loja 110150
+            </a>
           </p>
           <p className={styles.address}>
             <Mail size={14} />

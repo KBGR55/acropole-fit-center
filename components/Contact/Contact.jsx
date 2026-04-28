@@ -43,7 +43,12 @@ export default function Contact() {
               <ArrowUpRight className={styles.arrow} size={18} />
             </a>
 
-            <div className={styles.tile}>
+            <a
+              className={styles.tile}
+              href="https://maps.app.goo.gl/5VAcgbMU332iGj7u5"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span
                 className={`${styles.tileIcon} ${styles.iconCyan}`}
                 aria-hidden="true"
@@ -55,7 +60,8 @@ export default function Contact() {
                 <p>{t.contact.location.line1}</p>
                 <p>{t.contact.location.line2}</p>
               </div>
-            </div>
+              <ArrowUpRight className={styles.arrow} size={18} />
+            </a>
 
             <a className={styles.tile} href="tel:+593983835505">
               <span

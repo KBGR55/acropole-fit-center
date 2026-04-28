@@ -133,10 +133,10 @@ export const es = {
     email: { title: "Escríbenos", subtitle: "acropolefitcenterloja@gmail.com" },
   },
   footer: {
-    tagline: "Studio para mujeres en Loja. Pole Dance, Pole Sport, funcionales y flexibilidad.",
+    tagline: "Academia de Pole Dance, Pole Sport, entrenamiento funcional y flexibilidad en Loja, Ecuador.",
     site: "Sitio",
     visit: "Visítanos",
-    links: { sobre: "Sobre nosotras", disciplinas: "Disciplinas", beneficios: "Beneficios", planes: "Planes", horario: "Horario", historia: "Historia" },
+    links: { sobre: "Sobre nosotros", disciplinas: "Disciplinas", beneficios: "Beneficios", planes: "Planes", horario: "Horario", historia: "Historia" },
     rights: "Hecho con cariño en Loja.",
   },
   toggle: {
@@ -274,7 +274,7 @@ export const en = {
     email: { title: "Email us", subtitle: "acropolefitcenterloja@gmail.com" },
   },
   footer: {
-    tagline: "Studio for women in Loja. Pole Dance, Pole Sport, functional training and flexibility.",
+    tagline: "Pole Dance, Pole Sport, functional training and flexibility academy in Loja, Ecuador.",
     site: "Site",
     visit: "Visit us",
     links: { sobre: "About", disciplinas: "Disciplines", beneficios: "Benefits", planes: "Plans", horario: "Schedule", historia: "Story" },

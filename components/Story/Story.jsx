@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Quote, ExternalLink, Instagram } from "lucide-react";
 import { useT } from "@/i18n/I18nProvider";
 import styles from "./Story.module.css";
@@ -22,8 +23,14 @@ export default function Story() {
               rel="noopener noreferrer"
               aria-label={t.story.founder}
             >
-              <span className={styles.avatar} aria-hidden="true">
-                CM
+              <span className={styles.avatar}>
+                <Image
+                  src="/cristina.jpeg"
+                  alt="Cristina Marín Peroza, fundadora"
+                  width={1600}
+                  height={1576}
+                  className={styles.avatarImg}
+                />
               </span>
               <div>
                 <p className={styles.name}>{t.story.founder}</p>
