@@ -102,10 +102,6 @@ Toda la paleta vive en [`styles/variables.css`](./styles/variables.css). El tema
 
 Los textos están centralizados en [`i18n/dictionaries.js`](./i18n/dictionaries.js). Para cambiar una frase, editá el diccionario `es` o `en` correspondiente — los componentes los leen vía `useT()`.
 
-### WhatsApp y reservas
-
-- Número de WhatsApp y URL de reserva están como constantes al inicio de cada componente que las usa (`Hero.jsx`, `Plans.jsx`, `Contact.jsx`, `Navbar.jsx`, `Schedule.jsx`).
-- Para cambiar el número, buscá `WHATSAPP_NUMBER` o `593983835505` y reemplazá.
 
 ## Créditos
 

@@ -25,7 +25,7 @@ export default function Disciplines() {
           <p>{t.disciplines.intro}</p>
         </div>
 
-        <div className={styles.list}>
+        <div className={styles.list} role="list">
           {meta.map((m, i) => {
             const Icon = m.icon;
             const d = t.disciplines.items[m.id];
@@ -34,6 +34,7 @@ export default function Disciplines() {
                 key={m.id}
                 className={styles.row}
                 data-accent={m.accent}
+                role="listitem"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
                 <div className={styles.head}>

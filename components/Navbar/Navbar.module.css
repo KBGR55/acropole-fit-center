@@ -31,6 +31,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.65rem;
+  flex-shrink: 0;
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -52,12 +53,18 @@
 }
 
 .brandText {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2.4vw, 1.1rem);
 }
 
 .brandText span {
   color: var(--color-pink);
   font-weight: 500;
+}
+
+@media (max-width: 380px) {
+  .brandText span {
+    display: none;
+  }
 }
 
 .nav {
@@ -130,6 +137,7 @@
   display: none;
   width: 42px;
   height: 42px;
+  flex-shrink: 0;
   border-radius: var(--radius-pill);
   align-items: center;
   justify-content: center;

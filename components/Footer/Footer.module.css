@@ -68,6 +68,11 @@
   align-items: center;
   gap: 0.4rem;
   margin-bottom: var(--space-sm);
+  word-break: break-word;
+}
+
+.address a {
+  word-break: break-all;
 }
 
 .social {
@@ -105,9 +110,19 @@
   color: inherit;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 960px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .col:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
   .inner {
     grid-template-columns: 1fr;
-    gap: var(--space-lg);
   }
 }

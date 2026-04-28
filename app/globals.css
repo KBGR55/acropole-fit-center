@@ -10,10 +10,13 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+  /* Compensa el header fijo cuando se navega por anchors */
+  scroll-padding-top: calc(var(--header-h) + var(--space-sm));
 }
 
 body {
@@ -23,6 +26,7 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   transition: background var(--t-base), color var(--t-base);
 }
 
@@ -32,13 +36,14 @@ h3,
 h4 {
   font-family: var(--font-display);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.15;
   margin: 0 0 var(--space-sm);
   color: var(--color-text);
+  letter-spacing: -0.015em;
 }
 
-h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
-h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); }
+h2 { font-size: clamp(1.9rem, 3.8vw, 2.8rem); }
 h3 { font-size: 1.35rem; }
 
 p {
@@ -69,31 +74,62 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+  color: inherit;
+}
+
+/* Focus visible accesible y consistente */
+:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: var(--radius-sm);
+}
+
+/* Selección de texto con tono de marca */
+::selection {
+  background: var(--color-pink-soft);
+  color: var(--color-pink-strong);
 }
 
 .container {
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 var(--container-pad);
+}
+
+/* Header desktop más alto que mobile */
+@media (min-width: 760px) {
+  :root {
+    --header-h: 76px;
+  }
 }
 
 .section {
   padding: var(--space-2xl) 0;
+  scroll-margin-top: calc(var(--header-h) + var(--space-sm));
 }
 
 .section--alt {
-  background: var(--color-bg);
+  background: var(--color-bg-alt);
 }
 
 .eyebrow {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-pink);
   margin-bottom: var(--space-xs);
+  padding: 0.3rem 0.7rem;
+  background: var(--color-pink-soft);
+  border-radius: var(--radius-pill);
 }
 
 .section-title {
@@ -103,4 +139,28 @@ button {
 
 .section-title p {
   font-size: 1.05rem;
+}
+
+/* Animación reusable de fade + slide al entrar */
+@keyframes acropole-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respeto a usuarios con preferencia reducida */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
