@@ -116,7 +116,7 @@ button:focus-visible,
 }
 
 .section--alt {
-  background: var(--color-bg-alt);
+  background: var(--color-section-alt);
 }
 
 .eyebrow {

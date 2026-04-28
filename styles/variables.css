@@ -64,6 +64,9 @@
   --color-pink-soft: #FFE7F4;
   --color-gray-soft: #F4F4F5;
 
+  /* Fondo de sección alterna (mismo que bg-alt en light, igualado al bg en dark) */
+  --color-section-alt: var(--color-bg-alt);
+
   --color-nav-bg: rgba(255, 255, 255, 0.7);
   --color-nav-bg-scrolled: rgba(255, 255, 255, 0.92);
 
@@ -83,7 +86,9 @@
 
 [data-theme="dark"] {
   --color-bg: #0F0F14;
+  /* Fondo de "sección alterna" igualado al base en dark para continuidad visual */
   --color-bg-alt: #14141B;
+  --color-section-alt: var(--color-bg);
   --color-surface: #1B1B24;
   --color-text: #F1F1F5;
   --color-text-soft: #A8A8B3;
@@ -98,7 +103,7 @@
   --color-nav-bg: rgba(15, 15, 20, 0.7);
   --color-nav-bg-scrolled: rgba(15, 15, 20, 0.92);
 
-  --color-footer-bg: #07070C;
+  --color-footer-bg: var(--color-bg);
   --color-footer-text: #F1F1F5;
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45),
