@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Instagram, Music2, MapPin, Mail } from "lucide-react";
 import { useT } from "@/i18n/I18nProvider";
 import styles from "./Footer.module.css";
@@ -12,9 +13,14 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.col}>
-          <a href="#top" className={styles.brand}>
-            <span className={styles.brandMark} aria-hidden="true" />
-            <span>Acropole Fit Center</span>
+          <a href="#top" className={styles.brand} aria-label="Acropole Fit Center">
+            <Image
+              src="/logos/logo.png"
+              alt="Acropole Fit Center"
+              width={3300}
+              height={1980}
+              className={styles.brandLogo}
+            />
           </a>
           <p className={styles.tagline}>{t.footer.tagline}</p>
         </div>

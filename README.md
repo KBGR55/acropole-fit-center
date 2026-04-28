@@ -1,4 +1,8 @@
-# Acropole Fit Center
+<p align="center">
+  <img src="./public/logos/logo.png" alt="Acropole Fit Center" width="380" />
+</p>
+
+<h1 align="center">Acropole Fit Center</h1>
 
 Sitio web del studio **Acropole Fit Center** — un espacio para mujeres en Loja, Ecuador, dedicado al Pole Dance, Pole Sport, entrenamiento funcional y flexibilidad.
 
@@ -87,6 +91,8 @@ acropole-fit-center/
 ├── i18n/
 │   ├── dictionaries.js     # textos en español e inglés
 │   └── I18nProvider.jsx    # context + hook useT()
+├── public/
+│   └── logos/              # logo.png (horizontal) y logo-letras.png (mark AFC)
 ├── styles/
 │   └── variables.css       # tokens de tema (light + dark)
 └── package.json

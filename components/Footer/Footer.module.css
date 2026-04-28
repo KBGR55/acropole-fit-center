@@ -41,25 +41,13 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: #fff;
   margin-bottom: var(--space-sm);
 }
 
-.brandMark {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 220deg,
-    var(--color-pink),
-    var(--color-cyan),
-    var(--color-green),
-    var(--color-pink)
-  );
+.brandLogo {
+  width: auto;
+  height: 56px;
+  object-fit: contain;
 }
 
 .tagline {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import LanguageToggle from "@/components/LanguageToggle/LanguageToggle";
@@ -32,10 +33,14 @@ export default function Navbar() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`container ${styles.inner}`}>
         <a href="#top" className={styles.brand} aria-label="Acropole Fit Center">
-          <span className={styles.brandMark} aria-hidden="true" />
-          <span className={styles.brandText}>
-            Acropole<span> Fit Center</span>
-          </span>
+          <Image
+            src="/logos/logo.png"
+            alt="Acropole Fit Center"
+            width={3300}
+            height={1980}
+            className={styles.brandLogo}
+            priority
+          />
         </a>
 
         <nav className={`${styles.nav} ${open ? styles.navOpen : ""}`}>
